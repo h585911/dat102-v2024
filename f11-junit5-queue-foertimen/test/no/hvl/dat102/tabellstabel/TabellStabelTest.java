@@ -18,7 +18,15 @@ class TabellStabelTest {
 
 	@BeforeEach
 	void nullstill() {
-		//TODO
+		
+		stabel0 = new TabellStabel<String>();
+		
+		stabel1 = new TabellStabel<String>();
+		stabel1.push("Java");
+		
+		stabel2 = new TabellStabel<String>();
+		stabel2.push("C#");
+		stabel2.push("C++");
 	}
 	
 	/*
