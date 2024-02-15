@@ -25,8 +25,8 @@ class TabellStabelTest {
 		stabel1.push("Java");
 		
 		stabel2 = new TabellStabel<String>();
-		stabel2.push("C#");
-		stabel2.push("C++");
+		stabel2.push("Per");
+		stabel2.push("Pål");
 	}
 	
 	/*
@@ -45,46 +45,51 @@ class TabellStabelTest {
 	
 	@Test
 	void enNyStabelSkalVaereTom() {
-		//TODO
+		assertTrue(stabel0.isEmpty());
 	}
 	
 	@Test
 	void enStabelMedEttEllerFlereElementerSkalIkkeVaereTom() {
-		//TODO
+		assertFalse(stabel1.isEmpty());
+		assertFalse(stabel2.isEmpty());
 	}
 	
 	@Test
 	void pushSkalLeggeElementetPaaToppenAvStabelen() {
-		//TODO
+		stabel1.push("Pål");
+		assertEquals("Pål", stabel1.peek());
 	}
 	
 	@Test
 	void peekPaaTomStabelSkalGiEmptyStackException() {
-		//TODO
+		assertThrows(EmptyStackException.class, () -> stabel0.peek());
 	}
 	
 	@Test
 	void peekPaaIkkeTomStabelSkalReturnereToppelementet() {
-		//TODO
+		assertEquals("Java", stabel1.peek());
 	}
 	
 	@Test
 	void peekPaaIkkeTomStabelSkalIkkeEndreStabelensInnhold() {
-		//TODO
+		assertEquals("Java", stabel1.peek());
+		assertFalse(stabel1.isEmpty());
 	}
 	
 	@Test
 	void popPaaTomStabelSkalGiEmptyStackException() {
-		//TODO
+		assertThrows(EmptyStackException.class, () -> stabel0.pop());
 	}
 	
 	@Test
 	void popPaaIkkeTomStabelSkalFjerneOgReturnereToppelementet() {
-		//TODO
+		assertEquals("Pål", stabel2.pop());
+		assertEquals("Per", stabel2.peek());
 	}
 	
 	@Test
 	void clearSkalTommeStabelen() {
-		//TODO
+		stabel2.clear();
+		assertTrue(stabel2.isEmpty());
 	}
 }
